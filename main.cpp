@@ -8,7 +8,12 @@ using namespace std;
 template <typename T>
 struct Dimensions {      
     int operator()(int* coordinates, int* sizes, int dimensions) {
-        // TODO
+		int pos=coordinates[0];
+		for(int i = 0; i < (dimensions);i++){
+			pos = pos + size[i] * coordinates[i + 1];
+			sizes[i + 1] = sizes[i] * size[i + 1];
+		}
+		return pos;
     }
 };
 
@@ -18,6 +23,7 @@ struct Integer {
 };
 
 int main(int argc, char *argv[]) {
+	
     system("pause");
     return EXIT_SUCCESS;
 }

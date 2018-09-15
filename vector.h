@@ -15,15 +15,25 @@ class Vector {
         int* dimensionSizes;
 
     public:
-        Vector() : data(nullptr) {};
+		Vector() : data(nullptr) {};
              
         Vector(int dimensions, int* dimensionSizes) : dimensions(dimensions), dimensionSizes(dimensionSizes) {
+			for (int i = 0; i < dimensions; i++) {
+				dataSize *= dimensionSizes[i];
+			}
+			data = new T[dataSize];
             // TODO
         }
              
-        void set(T datum, int* coordinates); // TODO
+		void set(T datum, int* coordinates) {
+			Operation cmp;
+			data[cmp(coordinates, dimensionSizes, dimensions)] = datum;
+		}; // TODO
              
-        T get(int* coordinates); // TODO
+		T get(int* coordinates) {
+			Operation cmp;
+			data[cmp(coordinates, dimensionSizes, dimensions)];
+		}; // TODO
 };
 
 #endif
