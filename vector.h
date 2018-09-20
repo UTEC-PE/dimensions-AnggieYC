@@ -26,14 +26,16 @@ class Vector {
         }
              
 		void set(T datum, int* coordinates) {
-			Operation cmp;
+			Operation cmp; // Esto podría ser parte de tus atributos privados?
 			data[cmp(coordinates, dimensionSizes, dimensions)] = datum;
 		}; // TODO
              
 		T get(int* coordinates) {
-			Operation cmp;
+			Operation cmp; // Esto podría ser parte de tus atributos privados?
 			data[cmp(coordinates, dimensionSizes, dimensions)];
 		}; // TODO
+
+		// Y el destructor?
 };
 
 #endif
